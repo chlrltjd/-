@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>최기성 | 포트폴리오</title>
+<meta name="description" content="레저해양스포츠학과 최기성의 개인 포트폴리오">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --salt:#F2F5F4; --foam:#DCEAE8; --deep:#0A2F44; --tide:#1D6F8A; --ink:#14232C; --buoy:#E8553D;
+  --serif:"Noto Serif KR","Nanum Myeongjo",Georgia,serif;
+  --sans:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --nav-h:64px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:var(--nav-h)}
+body{font-family:var(--sans);background:var(--salt);color:var(--ink);line-height:1.8;font-size:17px;word-break:keep-all}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--buoy);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+/* Nav */
+header{position:fixed;inset:0 0 auto 0;height:var(--nav-h);z-index:20;background:rgba(242,245,244,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(10,47,68,.12)}
+header .wrap{height:100%;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--serif);font-weight:900;text-decoration:none;font-size:1.15rem;color:var(--deep)}
+nav ul{display:flex;gap:6px;list-style:none}
+nav a{display:block;padding:8px 14px;border-radius:999px;text-decoration:none;font-size:.95rem;font-weight:500;color:var(--deep);transition:background .2s,color .2s}
+nav a:hover{background:var(--foam)}
+nav a.active{background:var(--deep);color:var(--salt)}
+.burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer;color:var(--deep)}
+.burger span{display:block;width:22px;height:2px;background:currentColor;margin:5px auto;transition:transform .25s,opacity .25s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* Hero */
+#home{min-height:100svh;background:var(--deep);color:var(--salt);position:relative;display:flex;align-items:center;overflow:hidden;padding:calc(var(--nav-h) + 40px) 0 180px}
+#home h1{font-family:var(--serif);font-weight:900;font-size:clamp(4.2rem,16vw,10rem);line-height:1.05;letter-spacing:-.02em}
+#home .major{margin-top:18px;font-size:clamp(1.05rem,2.6vw,1.35rem);color:var(--foam)}
+#home .motto{margin-top:28px;max-width:30em;font-family:var(--serif);font-size:clamp(1.2rem,3vw,1.6rem);font-weight:500;border-left:3px solid var(--buoy);padding-left:16px}
+.btns{margin-top:36px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 26px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid var(--salt);transition:background .2s,color .2s}
+.btn.solid{background:var(--salt);color:var(--deep)}
+.btn.solid:hover{background:var(--foam)}
+.btn.line:hover{background:rgba(255,255,255,.12)}
+.sea{position:absolute;left:0;bottom:0;width:100%;height:150px;overflow:hidden;pointer-events:none}
+.sea svg{position:absolute;bottom:0;left:0;width:200%;height:100%;animation:drift 18s linear infinite}
+.sea svg:nth-child(1){animation-duration:30s;opacity:.35}
+.sea svg:nth-child(2){animation-duration:20s;opacity:.6;height:75%}
+.sea svg:nth-child(3){animation-duration:14s;height:50%}
+@keyframes drift{to{transform:translateX(-50%)}}
+
+/* Sections */
+section.page{padding:112px 0}
+section.page.alt{background:var(--foam)}
+h2{font-family:var(--serif);font-weight:900;font-size:clamp(2rem,5vw,3rem);color:var(--deep);line-height:1.25;margin-bottom:12px}
+.lead{max-width:34em;color:#3A4D57;margin-bottom:48px}
+
+/* About */
+.about{display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:start}
+.about p.big{font-family:var(--serif);font-size:clamp(1.4rem,3vw,1.9rem);line-height:1.6;color:var(--deep);font-weight:700}
+dl{border-top:2px solid var(--deep)}
+dl div{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid rgba(10,47,68,.2)}
+dt{font-weight:700;color:var(--tide)}
+dd{color:var(--ink)}
+
+/* Skills */
+.skill{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.4fr);gap:32px;align-items:baseline;padding:36px 0;border-top:1px solid rgba(10,47,68,.25)}
+.skill:last-child{border-bottom:1px solid rgba(10,47,68,.25)}
+.skill h3{font-family:var(--serif);font-size:clamp(1.8rem,4.5vw,2.8rem);color:var(--deep);line-height:1.2}
+.skill:nth-child(2) h3{color:var(--tide)}
+.skill:nth-child(3) h3{color:#2B4A5A}
+.skill p{color:#2C3E48}
+.skill b{display:block;margin-bottom:4px;color:var(--deep)}
+
+/* Projects */
+.empty{border:2px dashed var(--tide);border-radius:20px;padding:48px 32px;text-align:center;background:rgba(255,255,255,.5)}
+.empty strong{display:block;font-family:var(--serif);font-size:1.5rem;color:var(--deep);margin-bottom:8px}
+.empty p{color:#3A4D57;max-width:28em;margin:0 auto}
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.proj{background:#fff;border-radius:16px;padding:28px;border:1px solid rgba(10,47,68,.15)}
+.proj h3{font-family:var(--serif);color:var(--deep);margin-bottom:8px}
+.proj small{color:var(--tide);font-weight:700}
+
+/* Goal */
+#goal{background:var(--deep);color:var(--salt)}
+#goal h2{color:var(--salt)}
+#goal .lead{color:var(--foam)}
+.goal-big{font-family:var(--serif);font-weight:900;font-size:clamp(2.4rem,9vw,6rem);line-height:1.15;margin:8px 0 48px}
+.path{display:flex;align-items:stretch;gap:12px;flex-wrap:wrap}
+.path div{flex:1 1 180px;border:1px solid rgba(255,255,255,.3);border-radius:14px;padding:20px 22px}
+.path small{display:block;color:var(--foam);font-size:.85rem;margin-bottom:4px}
+.path strong{font-family:var(--serif);font-size:1.2rem}
+.path div:last-child{background:var(--salt);color:var(--deep);border-color:var(--salt)}
+.path div:last-child small{color:var(--tide)}
+
+footer{background:#06202F;color:var(--foam);padding:28px 0;text-align:center;font-size:.9rem}
+
+/* Mobile */
+@media (max-width:760px){
+  body{font-size:16px}
+  .burger{display:block}
+  nav{position:absolute;top:var(--nav-h);left:0;right:0;background:var(--salt);border-bottom:1px solid rgba(10,47,68,.15);max-height:0;overflow:hidden;transition:max-height .3s}
+  nav.open{max-height:360px}
+  nav ul{flex-direction:column;padding:12px 24px 20px}
+  nav a{border-radius:10px;padding:12px 14px}
+  .about{grid-template-columns:1fr;gap:32px}
+  .skill{grid-template-columns:1fr;gap:12px;padding:28px 0}
+  section.page{padding:80px 0}
+  dl div{grid-template-columns:90px 1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .sea svg{animation:none}
+  *{transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="#home" class="logo">최기성</a>
+    <button class="burger" aria-label="메뉴 열기" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+    <nav id="menu" aria-label="주 메뉴">
+      <ul>
+        <li><a href="#home">홈</a></li>
+        <li><a href="#about">자기소개</a></li>
+        <li><a href="#skills">역량</a></li>
+        <li><a href="#projects">프로젝트</a></li>
+        <li><a href="#goal">진로 목표</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section id="home">
+    <div class="wrap">
+      <h1>최기성</h1>
+      <p class="major">레저해양스포츠학과 · 스포츠를 좋아하는 학생</p>
+      <p class="motto">흔들리는 물 위에서도 중심을 잃지 않는, 멋있는 사람이 되겠습니다.</p>
+      <div class="btns">
+        <a class="btn solid" href="#about">자기소개 보기</a>
+        <a class="btn line" href="#goal">진로 목표 보기</a>
+      </div>
+    </div>
+    <div class="sea" aria-hidden="true">
+      <svg viewBox="0 0 2400 120" preserveAspectRatio="none"><path fill="#1D6F8A" d="M0 50 C200 10 400 90 600 50 C800 10 1000 90 1200 50 C1400 10 1600 90 1800 50 C2000 10 2200 90 2400 50 V120 H0Z"/></svg>
+      <svg viewBox="0 0 2400 120" preserveAspectRatio="none"><path fill="#DCEAE8" d="M0 70 C200 30 400 110 600 70 C800 30 1000 110 1200 70 C1400 30 1600 110 1800 70 C2000 30 2200 110 2400 70 V120 H0Z"/></svg>
+      <svg viewBox="0 0 2400 120" preserveAspectRatio="none"><path fill="#F2F5F4" d="M0 80 C200 50 400 110 600 80 C800 50 1000 110 1200 80 C1400 50 1600 110 1800 80 C2000 50 2200 110 2400 80 V120 H0Z"/></svg>
+    </div>
+  </section>
+
+  <section id="about" class="page">
+    <div class="wrap about">
+      <div>
+        <h2>자기소개</h2>
+        <p class="big">저는 레저해양스포츠학과에서 스포츠를 공부하는 최기성입니다.</p>
+      </div>
+      <dl>
+        <div><dt>이름</dt><dd>최기성</dd></div>
+        <div><dt>전공</dt><dd>레저해양스포츠학과</dd></div>
+        <div><dt>관심 분야</dt><dd>스포츠</dd></div>
+        <div><dt>경험</dt><dd>아직 없음. 지금부터 쌓아갑니다.</dd></div>
+        <div><dt>목표</dt><dd>멋있는 사람이 되기</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="skills" class="page alt">
+    <div class="wrap">
+      <h2>역량</h2>
+      <p class="lead">경험은 아직 없지만, 어떤 상황에서도 나를 지키는 세 가지 힘이 있습니다.</p>
+      <div>
+        <div class="skill"><h3>높은 자존감</h3><p><b>나를 믿는 힘</b>다른 사람과 비교하지 않고, 내 기준으로 판단하고 행동합니다.</p></div>
+        <div class="skill"><h3>강한 멘탈</h3><p><b>쉽게 꺾이지 않는 힘</b>어려운 순간에도 마음을 다잡고 끝까지 해냅니다.</p></div>
+        <div class="skill"><h3>초연함</h3><p><b>한 걸음 떨어져 보는 힘</b>결과나 평가에 들뜨거나 무너지지 않고 차분하게 중심을 지킵니다.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="page">
+    <div class="wrap">
+      <h2>프로젝트</h2>
+      <p class="lead">아직 진행한 프로젝트는 없습니다. 첫 프로젝트가 생기면 이곳에 기록합니다.</p>
+      <div id="project-list"></div>
+    </div>
+  </section>
+
+  <section id="goal" class="page">
+    <div class="wrap">
+      <h2>진로 목표</h2>
+      <p class="goal-big">멋있는 사람이<br>되기</p>
+      <p class="lead">구체적인 직업은 배우면서 정해 갑니다. 지금 가진 것은 전공, 관심 분야, 그리고 세 가지 강점입니다.</p>
+      <div class="path">
+        <div><small>전공</small><strong>레저해양스포츠학과</strong></div>
+        <div><small>관심 분야</small><strong>스포츠</strong></div>
+        <div><small>강점</small><strong>자존감 · 멘탈 · 초연함</strong></div>
+        <div><small>목표</small><strong>멋있는 사람</strong></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© <span id="year"></span> 최기성. All rights reserved.</footer>
+
+<script>
+// 프로젝트가 생기면 아래 배열에 추가하세요.
+// 예: { title: "프로젝트 이름", period: "2026.00", desc: "설명" }
+const projects = [];
+
+const list = document.getElementById('project-list');
+if (projects.length === 0) {
+  list.innerHTML = '<div class="empty"><strong>첫 프로젝트가 들어올 자리입니다</strong><p>경험이 쌓이는 대로 이 페이지를 채워 가겠습니다.</p></div>';
+} else {
+  list.className = 'projects';
+  projects.forEach(p => {
+    const el = document.createElement('article');
+    el.className = 'proj';
+    const h = document.createElement('h3'); h.textContent = p.title;
+    const s = document.createElement('small'); s.textContent = p.period || '';
+    const d = document.createElement('p'); d.textContent = p.desc || '';
+    el.append(h, s, d);
+    list.appendChild(el);
+  });
+}
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// 모바일 메뉴
+const burger = document.querySelector('.burger');
+const menu = document.getElementById('menu');
+function setMenu(open) {
+  menu.classList.toggle('open', open);
+  burger.setAttribute('aria-expanded', open);
+  burger.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+}
+burger.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+
+// 현재 섹션 표시
+const links = [...menu.querySelectorAll('a')];
+const io = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (en.isIntersecting) {
+      links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + en.target.id));
+    }
+  });
+}, { rootMargin: '-45% 0px -50% 0px' });
+document.querySelectorAll('main section').forEach(s => io.observe(s));
+</script>
+</body>
+</html>
